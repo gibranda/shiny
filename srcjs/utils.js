@@ -56,6 +56,14 @@ function padZeros(n, digits) {
   return str;
 }
 
+// Round to a specified number of significant digits.
+function roundSignif(x, digits = 1) {
+  if (digits < 1)
+    throw "Significant digits must be at least 1.";
+
+  return parseFloat(x.toPrecision(digits));
+}
+
 // Take a string with format "YYYY-MM-DD" and return a Date object.
 // IE8 and QTWebKit don't support YYYY-MM-DD, but they support YYYY/MM/DD
 function parseDate(dateString) {
